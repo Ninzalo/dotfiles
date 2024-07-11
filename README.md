@@ -21,3 +21,9 @@ chmod ugo+x ./install.sh
 
 ## Neovim
 - Install my [Neovim configuration](https://github.com/Ninzalo/nvimconf)
+
+## Yabai
+- Install my [Yabai configuration](https://github.com/Ninzalo/yabaiconf)
+
+## Skhd
+- Install my [Skhd configuration](https://github.com/Ninzalo/skhdconf)
