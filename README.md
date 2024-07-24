@@ -8,6 +8,11 @@ Make sure to install stow
 ```sh
 brew install stow
 ```
+### [Optional]
+```sh
+brew tap arl/arl
+brew install gitmux fzf zoxide make node yarn jq
+```
 
 ## Install configuration
 ```sh
