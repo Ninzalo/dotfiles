@@ -26,6 +26,7 @@ hide_when_typing = true
 [keyboard]
 bindings = [
   {key = "T", mods = "Command", action = "None"},
+  {key = "N", mods = "Command", action = "None"},
   {key = "W", mods = "Command", action = "Quit"},
   {key = "F", mods = "Option", action = "ToggleFullscreen"},
 ]
