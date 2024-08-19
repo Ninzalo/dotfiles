@@ -12,14 +12,7 @@ alias cls='clear'
 alias ll='ls -al'
 alias act='source ./venv/bin/activate'
 alias dea='deactivate'
-
-nvimconf() {
-    export CURR_LOC=$PWD
-    cd ~/.config/nvim
-    nvim .
-    cd $CURR_LOC
-    unset CURR_LOC
-}
+alias nvimconf='nvim ~/.config/nvim'
 
 export HOMEBREW_NO_ENV_HINTS=TRUE
 export PATH="$HOME/.local/bin:/opt/homebrew/bin:$PATH"
