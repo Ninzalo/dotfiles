@@ -4,14 +4,21 @@ My dotfiles repository.
 # Installation
 Make sure to install stow
 
-### With Brew
+## With Brew
 ```sh
 brew install stow
 ```
+
 ### [Optional]
 ```sh
 brew tap arl/arl
 brew install gitmux fzf zoxide make node yarn jq
+```
+
+### [Hyperkey](https://hyperkey.app/)
+Install Hyperkey to convert Caps Lock to the hyper key
+```sh
+brew install --cask hyperkey
 ```
 
 ## Install configuration
