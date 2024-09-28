@@ -29,7 +29,7 @@ bindings = [
   {key = "T", mods = "Command", action = "None"},
   {key = "N", mods = "Command", action = "None"},
   {key = "W", mods = "Command", action = "Quit"},
-  {key = "F", mods = "Option", action = "ToggleFullscreen"},
+  {key = "F", mods = "Command|Control|Shift|Alt", action = "ToggleFullscreen"},
   # Tmux general
   {key = "R", mods = "Command|Control|Shift|Alt", chars = "\u0001R"}, # Reload Tmux config
   {key = "U", mods = "Command|Control|Shift|Alt", chars = "\u0001U"}, # Update Tmux plugins
