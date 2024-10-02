@@ -33,6 +33,7 @@ bindings = [
   # Tmux general
   {key = "R", mods = "Command|Control|Shift|Alt", chars = "\u0001R"}, # Reload Tmux config
   {key = "U", mods = "Command|Control|Shift|Alt", chars = "\u0001U"}, # Update Tmux plugins
+  {key = "I", mods = "Command|Control|Shift|Alt", chars = "\u0001I"}, # Install Tmux plugins
   {key = "X", mods = "Command|Control|Shift|Alt", chars = "\u0001x"}, # Kill session/window/pane
   {key = "M", mods = "Command|Control|Shift|Alt", chars = "\u0001m"}, # Maximize pane
   ## Sessions
