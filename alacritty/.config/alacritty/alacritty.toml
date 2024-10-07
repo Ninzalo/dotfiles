@@ -50,4 +50,6 @@ bindings = [
   ## Panes
   {key = "\\" , mods = "Command|Control|Shift|Alt", chars = "\u0001%"}, # Vertical split
   {key = '-' , mods = "Command|Control|Shift|Alt", chars = "\u0001-"}, # Horizontal split
+  # Copy mode
+  {key = '[' , mods = "Command|Control|Shift|Alt", chars = "\u0001["}, # Enter Copy mode
 ]
