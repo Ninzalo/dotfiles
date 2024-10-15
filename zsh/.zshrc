@@ -31,6 +31,7 @@ function upd() {
   echo "[INFO] Brew cleanup started"
   brew cleanup --prune=all
   echo "[INFO] Update finished"
+  source ~/.zshrc
   cd $current_dir
 }
 
