@@ -1,6 +1,8 @@
 [submodule "nvim"]
 	path = nvim
 	url = git@github.com:Ninzalo/nvim.git
+  branch = master
 [submodule "nix-darwin"]
 	path = nix-darwin
 	url = git@github.com:Ninzalo/nix-darwin.git
+  branch = master
