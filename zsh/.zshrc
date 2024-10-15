@@ -17,6 +17,23 @@ alias nvimconf='nvim ~/.config/nvim'
 export HOMEBREW_NO_ENV_HINTS=TRUE
 export PATH="$HOME/.local/bin:/opt/homebrew/bin:$PATH"
 
+function upd() {
+  current_dir=$(pwd)
+  cd ~/dotfiles/nix-darwin/
+  echo "[INFO] Nix update started"
+  nix flake update
+  echo "[INFO] Nix rebuild started"
+  darwin-rebuild switch --flake .#mbp --impure
+  echo "[INFO] Brew update started"
+  brew update
+  echo "[INFO] Brew upgrade started"
+  brew upgrade
+  echo "[INFO] Brew cleanup started"
+  brew cleanup --prune=all
+  echo "[INFO] Update finished"
+  cd $current_dir
+}
+
 # Zoxide (better cd)
 source <(zoxide init zsh)
 
