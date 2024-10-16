@@ -2,34 +2,121 @@
 My dotfiles repository.
 
 # Installation
-Make sure to install stow
-
-## With Brew
+## Install Nix
 ```sh
-brew install stow
+sh <(curl -L https://nixos.org/nix/install)
+nix-shell -p neofetch --run neofetch
 ```
 
-### [Optional]
+### Check if Nix is installed
 ```sh
-brew tap arl/arl
-brew install gitmux fzf zoxide make node yarn jq
+which nix
 ```
 
-### [Hyperkey](https://hyperkey.app/)
-Install Hyperkey to convert Caps Lock to the hyper key
+## Backup old dotfiles-related files
 ```sh
-brew install --cask hyperkey
+mv -rf ~/dotfiles ~/dotfiles-before-nix-dotfiles
+mkdir -p ~/dotfiles
+mv -rf ~/.config/ ~/.config-before-nix-dotfiles
+mkdir -p ~/.config
+mv ~/.zshrc ~/.zshrc-before-nix-dotfiles
 ```
 
-## Install configuration
+## Clone repository
 ```sh
-sh ./install.sh
+git clone git@github.com:Ninzalo/dotfiles.git <your_dotfiles_directory>
+cd <your_dotfiles_directory>/nix-darwin
 ```
-Or
+<details>
+<summary>Example</summary>
+<p></p>
+
 ```sh
-chmod ugo+x ./install.sh
-./install.sh
+git clone git@github.com:Ninzalo/dotfiles.git ~/dotfiles/
+cd ~/dotfiles/nix-darwin
 ```
+</details>
+
+## Initialize new flake
+```sh
+nix flake init -t nix-darwin --extra-experimental-features "nix-command flakes"
+```
+
+## Set configuration name
+```sh
+sed -i '' "s/simple/$(scutil --get LocalHostName)/" flake.nix
+```
+<details>
+<summary>Example</summary>
+<p></p>
+
+```sh
+sed -i '' "s/simple/mbp/" ./flake.nix
+```
+</details>
+
+## Install nix-darwin
+```sh
+nix run nix-darwin --extra-experimental-features "nix-command flakes" -- switch --flake .#<configuration_name>
+```
+<details>
+<summary>Example</summary>
+<p></p>
+
+```sh
+nix run nix-darwin --extra-experimental-features "nix-command flakes" -- switch --flake .#mbp
+```
+</details>
+
+### Check if nix-darwin is installed
+```sh
+which darwin-rebuild
+```
+
+## Switch to new configuration
+```sh
+darwin-rebuild switch --flake .#mbp --impure
+```
+
+# Fast install
+<details>
+<summary>Copy-paste</summary>
+<p></p>
+
+```sh
+echo "Install Nix ..."
+sh <(curl -L https://nixos.org/nix/install)
+nix-shell -p neofetch --run neofetch
+which nix
+echo "Nix installed."
+echo "Backup old dotfiles ..."
+mv -rf ~/dotfiles ~/dotfiles-before-nix-dotfiles
+mkdir -p ~/dotfiles
+echo "Old dotfiles backed up."
+echo "Backup old .config ..."
+mv -rf ~/.config/ ~/.config-before-nix-dotfiles
+mkdir -p ~/.config
+echo "Old .config backed up."
+echo "Backup old .zshrc ..."
+mv ~/.zshrc ~/.zshrc-before-nix-dotfiles
+echo "Old .zshrc backed up."
+echo "Cloning repository ..."
+git clone git@github.com:Ninzalo/dotfiles.git ~/dotfiles/
+echo "Repository cloned."
+cd ~/dotfiles/nix-darwin
+echo "Initializing new flake ..."
+nix flake init -t nix-darwin --extra-experimental-features "nix-command flakes"
+echo "Flake initialized."
+echo "Installing nix-darwin ..."
+nix run nix-darwin --extra-experimental-features "nix-command flakes" -- switch --flake .#mbp
+which darwin-rebuild
+echo "Nix-darwin installed."
+echo "Switching to new configuration ..."
+darwin-rebuild switch --flake .#mbp --impure
+echo "Configuration switched."
+echo "Done."
+```
+</details>
 
 ## Neovim
 - Install my [Neovim configuration](https://github.com/Ninzalo/nvimconf)
