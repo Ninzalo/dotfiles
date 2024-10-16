@@ -44,3 +44,20 @@ alias cd="z"
 # Fzf
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
+
+
+# Check if tmux is installed
+if command -v tmux > /dev/null 2>&1; then
+    # Only proceed if not already inside a tmux session
+    if [ -z "$TMUX" ]; then
+        # Check if a tmux server is running
+        if ! tmux ls > /dev/null 2>&1; then
+            # No server running, start tmux
+            tmux
+        else
+            # Server is running, attach to the first session
+            first_session=$(tmux ls | head -n 1 | cut -d: -f1)
+            tmux attach-session -t "$first_session"
+        fi
+    fi
+fi
