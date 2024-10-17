@@ -116,6 +116,7 @@ sh fast_install.sh 'mbp'
 ```
 </details>
 
+# Other guides
 ## Neovim
 - Install my [Neovim configuration](https://github.com/Ninzalo/nvimconf)
 
