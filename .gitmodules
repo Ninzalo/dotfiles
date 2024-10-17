@@ -1,12 +1,12 @@
 [submodule "nvim"]
 	path = nvim
 	url = git@github.com:Ninzalo/nvim.git
-[submodule "nix-darwin"]
-	path = nix-darwin
-	url = git@github.com:Ninzalo/nix-darwin.git
 [submodule "alacritty"]
 	path = alacritty
 	url = git@github.com:Ninzalo/dotfiles-alacritty.git
 [submodule "gitmux"]
 	path = gitmux
 	url = git@github.com:Ninzalo/dotfiles-gitmux.git
+[submodule "nix-darwin"]
+	path = nix-darwin
+	url = git@github.com:Ninzalo/dotfiles-nix-darwin.git
