@@ -13,3 +13,6 @@
 [submodule "tmux"]
 	path = tmux
 	url = git@github.com:Ninzalo/dotfiles-tmux.git
+[submodule "zsh"]
+	path = zsh
+	url = git@github.com:Ninzalo/dotfiles-zsh.git
