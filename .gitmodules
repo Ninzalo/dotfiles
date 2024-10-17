@@ -10,3 +10,6 @@
 [submodule "nix-darwin"]
 	path = nix-darwin
 	url = git@github.com:Ninzalo/dotfiles-nix-darwin.git
+[submodule "tmux"]
+	path = tmux
+	url = git@github.com:Ninzalo/dotfiles-tmux.git
