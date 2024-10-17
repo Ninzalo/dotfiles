@@ -14,6 +14,10 @@ which nix
 ```
 
 ## Backup old dotfiles-related files
+<details>
+<summary>Example</summary>
+<p></p>
+
 ```sh
 mv -rf ~/dotfiles ~/dotfiles-before-nix-dotfiles
 mkdir -p ~/dotfiles
@@ -21,6 +25,7 @@ mv -rf ~/.config/ ~/.config-before-nix-dotfiles
 mkdir -p ~/.config
 mv ~/.zshrc ~/.zshrc-before-nix-dotfiles
 ```
+</details>
 
 ## Clone repository
 ```sh
