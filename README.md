@@ -79,42 +79,15 @@ darwin-rebuild switch --flake .#mbp --impure
 ```
 
 # Fast install
+```sh
+sh fast_install.sh '<configuration_name>'
+```
 <details>
-<summary>Copy-paste</summary>
+<summary>Example</summary>
 <p></p>
 
 ```sh
-echo "Install Nix ..."
-sh <(curl -L https://nixos.org/nix/install)
-nix-shell -p neofetch --run neofetch
-which nix
-echo "Nix installed."
-echo "Backup old dotfiles ..."
-mv -rf ~/dotfiles ~/dotfiles-before-nix-dotfiles
-mkdir -p ~/dotfiles
-echo "Old dotfiles backed up."
-echo "Backup old .config ..."
-mv -rf ~/.config/ ~/.config-before-nix-dotfiles
-mkdir -p ~/.config
-echo "Old .config backed up."
-echo "Backup old .zshrc ..."
-mv ~/.zshrc ~/.zshrc-before-nix-dotfiles
-echo "Old .zshrc backed up."
-echo "Cloning repository ..."
-git clone git@github.com:Ninzalo/dotfiles.git ~/dotfiles/
-echo "Repository cloned."
-cd ~/dotfiles/nix-darwin
-echo "Initializing new flake ..."
-nix flake init -t nix-darwin --extra-experimental-features "nix-command flakes"
-echo "Flake initialized."
-echo "Installing nix-darwin ..."
-nix run nix-darwin --extra-experimental-features "nix-command flakes" -- switch --flake .#mbp
-which darwin-rebuild
-echo "Nix-darwin installed."
-echo "Switching to new configuration ..."
-darwin-rebuild switch --flake .#mbp --impure
-echo "Configuration switched."
-echo "Done."
+sh fast_install.sh 'mbp'
 ```
 </details>
 
