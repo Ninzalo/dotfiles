@@ -110,14 +110,14 @@ darwin-rebuild switch --flake --impure .#mbp
 
 # Fast install
 ```sh
-sh fast_install.sh '<configuration_name>'
+sh <(curl -L https://raw.githubusercontent.com/Ninzalo/dotfiles/refs/heads/master/fast_install.sh) '<configuration_name>'
 ```
 <details>
 <summary>Example</summary>
 <p></p>
 
 ```sh
-sh fast_install.sh 'mbp'
+sh <(curl -L https://raw.githubusercontent.com/Ninzalo/dotfiles/refs/heads/master/fast_install.sh) 'mbp'
 ```
 </details>
 
