@@ -44,14 +44,16 @@ nix flake init -t nix-darwin --extra-experimental-features "nix-command flakes"
 
 ## Set configuration name
 ```sh
-sed -i '' "s/simple/$(scutil --get LocalHostName)/" flake.nix
+sed -i "s/mbp/<configuration_name>/" flake.nix
 ```
 <details>
 <summary>Example</summary>
 <p></p>
 
 ```sh
-sed -i '' "s/simple/mbp/" ./flake.nix
+sed -i "s/mbp/$(scutil --get LocalHostName)/" flake.nix
+# Or
+sed -i "s/mbp/mbp/" ./flake.nix
 ```
 </details>
 
