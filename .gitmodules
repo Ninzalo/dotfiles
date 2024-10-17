@@ -7,3 +7,6 @@
 [submodule "alacritty"]
 	path = alacritty
 	url = git@github.com:Ninzalo/dotfiles-alacritty.git
+[submodule "gitmux"]
+	path = gitmux
+	url = git@github.com:Ninzalo/dotfiles-gitmux.git
