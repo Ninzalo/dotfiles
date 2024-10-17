@@ -77,8 +77,16 @@ which darwin-rebuild
 
 ## Switch to new configuration
 ```sh
-darwin-rebuild switch --flake .#mbp --impure
+darwin-rebuild switch --flake --impure .#<configuration_name>
 ```
+<details>
+<summary>Example</summary>
+<p></p>
+
+```sh
+darwin-rebuild switch --flake --impure .#mbp
+```
+</details>
 
 # Fast install
 ```sh
