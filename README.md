@@ -42,6 +42,21 @@ cd ~/dotfiles/nix-darwin
 nix flake init -t nix-darwin --extra-experimental-features "nix-command flakes"
 ```
 
+## Set username
+```sh
+sed -i "s/ninzalogg/<your_username>/" flake.nix
+sed -i "s/ninzalogg/<your_username>/" home.nix
+```
+<details>
+<summary>Example</summary>
+<p></p>
+
+```sh
+sed -i "s/ninzalogg/$(id -un)/" flake.nix
+sed -i "s/ninzalogg/$(id -un)/" home.nix
+```
+</details>
+
 ## Set configuration name
 ```sh
 sed -i "s/mbp/<configuration_name>/" flake.nix
