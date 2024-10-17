@@ -66,6 +66,7 @@ sed -i "s/ninzalogg/$(id -un)/" home.nix
 ```sh
 sed -i "s/mbp/<configuration_name>/" flake.nix
 ```
+Note: Do not forget to change <code><configuration_name></code> to your preferred configuration name
 <details>
 <summary>Example</summary>
 <p></p>
@@ -81,6 +82,7 @@ sed -i "s/mbp/mbp/" ./flake.nix
 ```sh
 nix run nix-darwin --extra-experimental-features "nix-command flakes" -- switch --flake .#<configuration_name>
 ```
+Note: Do not forget to change <code><configuration_name></code> to your preferred configuration name
 <details>
 <summary>Example</summary>
 <p></p>
@@ -99,6 +101,7 @@ which darwin-rebuild
 ```sh
 darwin-rebuild switch --flake --impure .#<configuration_name>
 ```
+Note: Do not forget to change <code><configuration_name></code> to your preferred configuration name
 <details>
 <summary>Example</summary>
 <p></p>
@@ -112,6 +115,7 @@ darwin-rebuild switch --flake --impure .#mbp
 ```sh
 sh <(curl -L https://raw.githubusercontent.com/Ninzalo/dotfiles/refs/heads/master/fast_install.sh) '<configuration_name>'
 ```
+Note: Do not forget to change <code><configuration_name></code> to your preferred configuration name
 <details>
 <summary>Example</summary>
 <p></p>
