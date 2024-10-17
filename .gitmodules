@@ -6,3 +6,6 @@
   path = nix-darwin
   url = git@github.com:Ninzalo/nix-darwin.git
   branch = master
+[submodule "alacritty"]
+	path = alacritty
+	url = git@github.com:Ninzalo/dotfiles-alacritty.git
