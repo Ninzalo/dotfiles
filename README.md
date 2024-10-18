@@ -5,7 +5,6 @@ My dotfiles repository.
 ## Install Nix
 ```sh
 sh <(curl -L https://nixos.org/nix/install)
-nix-shell -p neofetch --run neofetch
 ```
 
 ### Check if Nix is installed
