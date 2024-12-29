@@ -16,3 +16,6 @@
 [submodule "zsh"]
 	path = zsh
 	url = git@github.com:Ninzalo/dotfiles-zsh.git
+[submodule "ghostty"]
+	path = ghostty
+	url = git@github.com:Ninzalo/ghostty.git
