@@ -16,6 +16,7 @@ echo "Old .zshrc backed up."
 
 echo "Cloning repository ..."
 git clone git@github.com:Ninzalo/dotfiles.git ~/dotfiles/
+cd ~/dotfiles
 echo "Repository cloned."
 
 echo "Installing brew packages ..."
