@@ -18,14 +18,14 @@ mv ~/.zshrc ~/.zshrc-before-update
 
 ## Clone repository
 ```sh
-git clone git@github.com:Ninzalo/dotfiles.git <your_dotfiles_directory>
+git clone --recurse-submodules git@github.com:Ninzalo/dotfiles.git <your_dotfiles_directory>
 ```
 <details>
 <summary>Example</summary>
 <p></p>
 
 ```sh
-git clone git@github.com:Ninzalo/dotfiles.git ~/dotfiles/
+git clone --recurse-submodules git@github.com:Ninzalo/dotfiles.git ~/dotfiles/
 ```
 </details>
 
