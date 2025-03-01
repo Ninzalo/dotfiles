@@ -15,7 +15,7 @@ mv ~/.zshrc ~/.zshrc-before-update
 echo "Old .zshrc backed up."
 
 echo "Cloning repository ..."
-git clone git@github.com:Ninzalo/dotfiles.git ~/dotfiles/
+git clone --recurse-submodules git@github.com:Ninzalo/dotfiles.git ~/dotfiles/
 cd ~/dotfiles
 echo "Repository cloned."
 
