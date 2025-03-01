@@ -1,12 +1,12 @@
 #!/bin/bash
 
 echo "Backup old dotfiles ..."
-mv -rf ~/dotfiles ~/dotfiles-before-update
+mv ~/dotfiles ~/dotfiles-before-update
 mkdir -p ~/dotfiles
 echo "Old dotfiles backed up."
 
 echo "Backup old .config ..."
-mv -rf ~/.config/ ~/.config-before-update
+mv ~/.config/ ~/.config-before-update
 mkdir -p ~/.config
 echo "Old .config backed up."
 
