@@ -25,7 +25,7 @@ done
 for pkg in $ROOT_PKGS; do
     echo "Processing $pkg files:"
 
-    find "$DOTFILES_DIR/$pkg" -mindepth 1 -maxdepth 1 ! -name ".git" | while read -r file; do
+    find "$DOTFILES_DIR/$pkg" -mindepth 1 -maxdepth 1 ! -name ".git" ! -name ".gitignore" | while read -r file; do
         filename=$(basename "$file")
         target="$HOME/$filename"
 
