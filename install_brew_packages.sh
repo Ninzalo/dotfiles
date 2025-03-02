@@ -45,6 +45,7 @@ FORMULAE=(
   tmux
   fzf
   zoxide
+  jesseduffield/lazygit/lazygit
   lazygit
   make
   jq
