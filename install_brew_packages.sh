@@ -81,6 +81,7 @@ CASKS=(
   db-browser-for-sqlite
   docker
   orbstack
+  blender
 )
 
 # Tap repositories
