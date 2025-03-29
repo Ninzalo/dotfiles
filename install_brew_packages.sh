@@ -71,6 +71,7 @@ FORMULAE=(
   zsh-syntax-highlighting
   jordanbaird-ice
   curl
+  gcc
 )
 
 CASKS=(
