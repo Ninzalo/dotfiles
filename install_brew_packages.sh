@@ -78,7 +78,6 @@ CASKS=(
   alacritty
   ghostty
   rectangle
-  hyperkey
   db-browser-for-sqlite
   docker
   orbstack
