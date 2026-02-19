@@ -69,7 +69,6 @@ FORMULAE=(
   go
   zsh-autosuggestions
   zsh-syntax-highlighting
-  jordanbaird-ice
   curl
   gcc
   tw93/tap/mole
