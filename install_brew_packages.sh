@@ -72,6 +72,7 @@ FORMULAE=(
   jordanbaird-ice
   curl
   gcc
+  tw93/tap/mole
 )
 
 CASKS=(
