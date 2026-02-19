@@ -60,7 +60,7 @@ FORMULAE=(
   eza
   sshpass
   poetry
-  gitmux
+  arl/arl/gitmux
   node
   npm
   nmap
