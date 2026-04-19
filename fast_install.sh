@@ -23,6 +23,10 @@ echo "Installing brew packages ..."
 sh ./install_brew_packages.sh
 echo "Brew packages installed."
 
+echo "Enabling tmux plugin ..."
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+echo "Tmux plugin enabled."
+
 echo "Creating symlinks ..."
 sh ./apply_symlinks.sh
 echo "Symlinks created."
