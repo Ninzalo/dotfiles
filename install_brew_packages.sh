@@ -77,6 +77,7 @@ FORMULAE=(
 CASKS=(
   alacritty
   rectangle
+  hyperkey
   blender
   freecad
   thaw@beta
