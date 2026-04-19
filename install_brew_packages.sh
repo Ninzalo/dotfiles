@@ -77,7 +77,6 @@ FORMULAE=(
 CASKS=(
   alacritty
   rectangle
-  db-browser-for-sqlite
   blender
   freecad
   thaw@beta
