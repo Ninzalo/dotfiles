@@ -82,6 +82,7 @@ CASKS=(
   docker
   orbstack
   blender
+  freecad
   thaw@beta
 )
 
