@@ -79,7 +79,6 @@ CASKS=(
   ghostty
   rectangle
   db-browser-for-sqlite
-  docker
   orbstack
   blender
   freecad
