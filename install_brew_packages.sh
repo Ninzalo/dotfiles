@@ -78,7 +78,6 @@ CASKS=(
   alacritty
   rectangle
   db-browser-for-sqlite
-  orbstack
   blender
   freecad
   thaw@beta
