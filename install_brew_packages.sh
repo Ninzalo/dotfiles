@@ -76,7 +76,6 @@ FORMULAE=(
 
 CASKS=(
   alacritty
-  ghostty
   rectangle
   db-browser-for-sqlite
   orbstack
