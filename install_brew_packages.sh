@@ -72,6 +72,7 @@ FORMULAE=(
   curl
   gcc
   tw93/tap/mole
+  netbirdio/tap/netbird
 )
 
 CASKS=(
