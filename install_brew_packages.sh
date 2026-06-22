@@ -73,6 +73,7 @@ FORMULAE=(
   gcc
   tw93/tap/mole
   netbirdio/tap/netbird
+  syncthing
 )
 
 CASKS=(
