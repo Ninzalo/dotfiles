@@ -71,6 +71,12 @@ FORMULAE=(
   zsh-syntax-highlighting
   curl
   gcc
+  rust
+  php
+  composer
+  openjdk
+  julia
+  luarocks
   tw93/tap/mole
   netbirdio/tap/netbird
   syncthing
