@@ -19,9 +19,9 @@ safe_install() {
         if [[ -z "$pkg" ]]; then continue; fi
         echo "Installing $type: $pkg..."
         if [[ "$type" == "cask" ]]; then
-            brew install --cask "$pkg" || echo "Error installing cask: $pkg"
+            brew install -y --cask "$pkg" || echo "Error installing cask: $pkg"
         else
-            brew install "$pkg" || echo "Error installing formula: $pkg"
+            brew install -y "$pkg" || echo "Error installing formula: $pkg"
         fi
     done
 }
@@ -124,7 +124,7 @@ done
 # Perform upgrades and installations
 if [[ ${#to_upgrade_formulae[@]} -gt 0 ]]; then
     echo "Upgrading formulae: ${to_upgrade_formulae[*]}"
-    brew upgrade "${to_upgrade_formulae[@]}" || echo "Formula upgrade failed"
+    brew upgrade -y "${to_upgrade_formulae[@]}" || echo "Formula upgrade failed"
 fi
 
 if [[ ${#to_install_formulae[@]} -gt 0 ]]; then
@@ -133,7 +133,7 @@ fi
 
 if [[ ${#to_upgrade_casks[@]} -gt 0 ]]; then
     echo "Upgrading casks: ${to_upgrade_casks[*]}"
-    brew upgrade --cask "${to_upgrade_casks[@]}" || echo "Cask upgrade failed"
+    brew upgrade -y --cask "${to_upgrade_casks[@]}" || echo "Cask upgrade failed"
 fi
 
 if [[ ${#to_install_casks[@]} -gt 0 ]]; then
