@@ -77,6 +77,7 @@ FORMULAE=(
   openjdk
   julia
   luarocks
+  poppler-qt5
   tw93/tap/mole
   netbirdio/tap/netbird
   syncthing
