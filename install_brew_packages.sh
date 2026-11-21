@@ -3,12 +3,18 @@ set -eo pipefail
 
 # Function to check formula installation
 is_formula_installed() {
-    brew list --formula | grep -qw "$1"
+    local short="${1##*/}"
+    local list
+    list=$(brew list --formula)
+    grep -qw -- "$short" <<< "$list"
 }
 
 # Function to check cask installation
 is_cask_installed() {
-    brew list --cask | grep -qw "$1"
+    local short="${1##*/}"
+    local list
+    list=$(brew list --cask)
+    grep -qw -- "$short" <<< "$list"
 }
 
 # Function to handle installations with error trapping
@@ -37,6 +43,10 @@ echo "Homebrew is ready. Checking packages..."
 # Tap repositories
 TAPS=(
   "arl/arl"
+  "incoai/tap"
+  "jesseduffield/lazygit"
+  "netbirdio/tap"
+  "tw93/tap"
 )
 
 # Package lists
@@ -46,7 +56,6 @@ FORMULAE=(
   fzf
   zoxide
   jesseduffield/lazygit/lazygit
-  lazygit
   make
   jq
   gnu-sed
@@ -62,7 +71,6 @@ FORMULAE=(
   poetry
   arl/arl/gitmux
   node
-  npm
   nmap
   pre-commit
   python
@@ -84,7 +92,6 @@ FORMULAE=(
 )
 
 CASKS=(
-  alacritty
   rectangle
   hyperkey
   blender
@@ -100,6 +107,16 @@ for tap in "${TAPS[@]}"; do
     fi
 done
 
+# Trust every non-official tap (idempotent). Silent when the entry already
+# exists, prints once when trust is (re-)established, reports on failure.
+for tap in "${TAPS[@]}"; do
+    trust_out=$(brew trust "$tap" 2>&1) || { echo "Error trusting $tap: $trust_out"; continue; }
+    case "$trust_out" in
+        "Already trusted"*) ;;
+        *) echo "$trust_out" ;;
+    esac
+done
+
 # Prepare install lists
 declare -a to_upgrade_formulae to_install_formulae
 declare -a to_upgrade_casks to_install_casks
@@ -107,7 +124,9 @@ declare -a to_upgrade_casks to_install_casks
 # Check formulae
 for formula in "${FORMULAE[@]}"; do
     if is_formula_installed "$formula"; then
-        to_upgrade_formulae+=("$formula")
+        if grep -qw -- "${formula##*/}" <<< "$outdated_formulae"; then
+            to_upgrade_formulae+=("$formula")
+        fi
     else
         to_install_formulae+=("$formula")
     fi
@@ -116,7 +135,9 @@ done
 # Check casks
 for cask in "${CASKS[@]}"; do
     if is_cask_installed "$cask"; then
-        to_upgrade_casks+=("$cask")
+        if grep -qw -- "${cask##*/}" <<< "$outdated_casks"; then
+            to_upgrade_casks+=("$cask")
+        fi
     else
         to_install_casks+=("$cask")
     fi
